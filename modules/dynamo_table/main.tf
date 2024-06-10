@@ -105,6 +105,7 @@ resource "aws_appautoscaling_target" "autoscaling_target_write" {
 }
 
 resource "aws_appautoscaling_policy" "autoscaling_policy_write" {
+  count              = var.billing_mode == "PAY_PER_REQUEST" ? 0 : 1
   name               = "DynamoDBWriteCapacityUtilization:table/${aws_dynamodb_table.dynamo_table.name}"
   policy_type        = "TargetTrackingScaling"
   resource_id        = aws_appautoscaling_target.autoscaling_target_write[0].resource_id

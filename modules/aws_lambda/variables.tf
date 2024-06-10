@@ -11,13 +11,24 @@ variable "role" {}
 ################################################
 
 variable "bucket" {
-    description = "S3 bucket when the source code is found"
+  description = "S3 bucket when the source code is found"
+  default     = null
 }
 variable "key" {
-    description = "file key containing the source code"
+  description = "file key containing the source code"
+  default     = null
 }
 variable "version_id" {
-    description = "version id of the file key containing the source code"
+  description = "version id of the file key containing the source code"
+  default     = null
+}
+variable "filename" {
+  description = "local file containing source code"
+  default     = null
+}
+variable "source_code_hash" {
+  description = "for local deployments hash to re deploy when function changes source code"
+  default     = null
 }
 
 ################################################
