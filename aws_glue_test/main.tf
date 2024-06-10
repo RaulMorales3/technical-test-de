@@ -51,11 +51,15 @@ module "dynamo_table_project" {
     project     = var.project
     environment = var.environment
     name        = var.role
-    hash_key    = "file_id"
-    range_key   = "timestamp"
+    hash_key    = "FileId"
+    range_key   = "Timestamp"
     attributes  = [
         {
-            name = "timestamp"
+            name = "FileId"
+            type = "S"
+        },
+        {
+            name = "Timestamp"
             type = "S"
         }
     ]

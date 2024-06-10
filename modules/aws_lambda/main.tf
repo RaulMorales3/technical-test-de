@@ -46,6 +46,8 @@ resource "aws_iam_role_policy_attachment" "policy_json_attachment" {
 
 resource "aws_lambda_function" "lambda" {
   function_name                  = "${var.project}-${var.environment}-${var.role}"
+  filename                       = var.filename
+  source_code_hash               = var.source_code_hash
   handler                        = var.handler
   role                           = aws_iam_role.role.arn
   runtime                        = var.runtime
