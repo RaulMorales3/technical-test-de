@@ -5,11 +5,11 @@ resource "aws_lambda_permission" "apigw_lambda" {
   action        = "lambda:InvokeFunction"
   function_name = each.value
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${var.rest_api_arn}/${var.stage_name}/${var.http_method}/${var.resource_path}"
+  source_arn    = "${var.rest_api_arn}/*/*"
 }
 resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = var.rest_api_id
-  variables   = {
+  variables = {
     deployed_at = timestamp()
   }
   lifecycle {
