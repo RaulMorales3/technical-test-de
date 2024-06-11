@@ -6,7 +6,7 @@ I was requested to:
 
 > User --> API Gateway --> AWS LAMBDA --> DynamoDB Table
 
-I deloyed each service using the terraform infrastructure that can be found inside this folder this is the api gateway url: `https://oqhfojxjvb.execute-api.us-east-1.amazonaws.com/dev/employees`
+I deloyed each service using the terraform infrastructure that can be found inside this folder this is the api gateway url: <https://oqhfojxjvb.execute-api.us-east-1.amazonaws.com/dev/employees>
 
 I put some items on the table for the test, when requested the api returns: 
 
@@ -55,7 +55,7 @@ I put some items on the table for the test, when requested the api returns:
 ]
 ````
 
-Or for a single Item with an id as a path parameter `https://oqhfojxjvb.execute-api.us-east-1.amazonaws.com/dev/employees/1`:
+Or for a single Item with an id as a path parameter <https://oqhfojxjvb.execute-api.us-east-1.amazonaws.com/dev/employees/1> :
 
 ````
 [
